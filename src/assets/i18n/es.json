@@ -1,5 +1,5 @@
 {
-    "Dashboard": "Principal",
+    "Dashboard": "Mi Muro",
     "Charts": "Caracteres",
     "Tables": "Tablas",
     "Forms": "Formularios",
@@ -20,7 +20,7 @@
     "Farsi": "Farsi",
     "Search" : "Búsqueda",
     "Settings" : "Ajustes",
-    "Profile" : "Profile",
+    "Profile" : "Mi Perfil",
     "Inbox" : "Bandeja de entrada",
     "Log Out" : "Cerrar Sesión"
 }
