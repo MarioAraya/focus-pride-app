@@ -1,16 +1,41 @@
-<div>
-  <p>
-    mi perfil works!
-  </p>
-  <ul>
-    <li>foto perfil
-    </li>
-    <li>amigos
-    </li>
-    <li>fotos  
-    </li>
-    <li>publicaciones personales y posteos de amigos que aparezca el día con las actividades a realizar
-    </li>
-    <li>código o número de membresía</li>
-  </ul>
-</div>
+<div [@routerTransition]>
+  <ngb-tabset>
+    <ngb-tab>
+      <ng-template ngbTabTitle>
+        <b>Noticias</b>
+      </ng-template>
+      <ng-template ngbTabContent>
+        <p>feed de mis contactos</p>
+        <p>- publicaciones de mis amigos alumnos y entrenadores, publicidad, novedades, descuentos, noticias mundo fitness.</p>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab>
+      <ng-template ngbTabTitle>
+        <b>Entrenadores</b>
+      </ng-template>
+      <ng-template ngbTabContent>
+        <p>lista de entrenadores</p>
+        <p>-poder buscar un entrenador y ver su info, cv, opiniones, etc</p>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab>
+      <ng-template ngbTabTitle>
+        <b>Gimnasios</b>
+      </ng-template>
+      <ng-template ngbTabContent>
+        <p>lista de gimnasios</p>
+        <p>- buscar gimnasios de la zona, ver sus precios, calendario de actividades. + info útil para los alumnos
+        </p>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab>
+      <ng-template ngbTabTitle>
+        <b>Tiendas</b>
+      </ng-template>
+      <ng-template ngbTabContent>
+        <p>feed de tiendas y su publicidad/ofertas de ropa y suplementos</p>
+        <p>- poder buscar una tienda, ver sus productos, comprar online</p>
+      </ng-template>
+    </ngb-tab>
+  </ngb-tabset>
+</div>    
