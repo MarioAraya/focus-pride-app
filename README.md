@@ -4,13 +4,14 @@ Aplicación asdf adsf, descripción de la app, cómo instalarla, cómo usarla, v
 
 Para probar la app:
 ```bash
-$ git clone https://github.com/MarioAraya/focus-pride-app.git
+# - Clonar repo
+$ git clone https://MarioAraya@bitbucket.org/MarioAraya/focus-pride-app.git
 $ cd focus-pride-app
-# instalar dependencias del proyecto
+# - Instalar dependencias del proyecto
 $ npm install
-# Mirar cambios en archivos levantando servidor de desarrollo en: `http://localhost:4200/`.
+# - Mirar cambios en archivos levantando servidor de desarrollo en: `http://localhost:4200/`.
 $ npm start
-# Genera 'build' optimizado para producción dentro de folder `dist`
+# - Genera 'build' optimizado para producción dentro de folder `dist`
 # el resultado puede ser hosteado en cualquier servidor http
 $ npm run build
 ```
