@@ -1,5 +1,5 @@
 /**
- * Foto de perfil, datos de usuario, fotos, codigoMembresía
+ * Foto de perfil, data usuario, fotos, codigoMembresía
  * tipo persona (Alumno/Entrenador)
  */
 export interface IPerfil extends IPersona{

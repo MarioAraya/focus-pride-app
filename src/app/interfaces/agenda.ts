@@ -12,7 +12,8 @@ interface IEvento {
     fechaCreacion: string
     fechaEvento: string
     tituloEvento: string
-    peridiocidad: any // TODO: definir forma de representar peridiocidad
+    // TODO: definir forma de representar peridiocidad
+    peridiocidad: any 
     // listado de codMembresia a quienes les aparecerá el evento en su agenda
     usuariosImplicados: string[]
     // listado de codMembresia con usuarios a quienes se les debe notificar
