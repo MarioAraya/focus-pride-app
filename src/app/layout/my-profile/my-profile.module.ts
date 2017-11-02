@@ -7,10 +7,9 @@ import { MyProfileRoutingModule } from './my-profile-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BsComponentModule } from './../bs-component/bs-component.module';
 
-
-// import {
-//     TabsComponent,
-// } from './../bs-component/components';
+import { MyProfilePostComponent } from './../subcomponents/my-profile-post/my-profile-post.component';
+import { PostComponent } from './../subcomponents/post/post.component';
+import { ListadoUsuariosComponent } from './../subcomponents/listado-usuarios/listado-usuarios.component';
 
 @NgModule({
     imports: [
@@ -21,7 +20,9 @@ import { BsComponentModule } from './../bs-component/bs-component.module';
     ],
     declarations: [
         MyProfileComponent,
-        // TabsComponent
+        MyProfilePostComponent,
+        PostComponent,
+        ListadoUsuariosComponent
     ]
 })
 export class MyProfileModule { }

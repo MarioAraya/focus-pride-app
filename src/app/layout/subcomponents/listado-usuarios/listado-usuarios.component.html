@@ -1,0 +1,25 @@
+<div class="comment-form">
+  <div class="form-inline row">
+    <div class="form-group">
+      <input ref-inputText (keyup.enter)="onBuscarTextChanged(inputText)" type="text" 
+      class="form-control" placeholder="ingrese texto" autocomplete="off">
+      <button type="button" class="btn btn-secondary" (click)="onBuscarTextChanged(inputText)">Buscar</button>
+    </div>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col" *ngFor="let item of listado">
+    <div class="post-avatar thumbnail text-center">
+      <a href="#">
+        <img src="{{ item.imagen }}" alt="">
+        <div>{{ item.texto }}</div>
+      </a>
+      <div>
+        <i class="fa fa-user-plus" aria-hidden="true" alt="Agregar de amigo" *ngIf="mostrarBtn(0)"></i>
+        <i class="fa fa-commenting" aria-hidden="true" alt="Enviar mensaje privado" *ngIf="mostrarBtn(1)"></i>
+        <i class="fa fa-plus-square" aria-hidden="true" alt="Seguir usuario" *ngIf="mostrarBtn(2)"></i>
+      </div>
+    </div>
+  </div>
+</div>

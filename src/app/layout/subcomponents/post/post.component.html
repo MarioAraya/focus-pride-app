@@ -1,0 +1,51 @@
+<div class="card  post">
+  <div class="card-block">
+    <div class="row justify-content-md-center">
+      <div class="col-md-3">
+        <a href="#" class="post-avatar thumbnail">
+          <img src="{{ usuarioAvatar }}" alt="">
+          <div class="text-center">{{ usuarioPost }}</div>
+        </a>
+        <!-- <div class="likes text-xs-center">7 Likes</div> -->
+      </div>
+      <div class="col-md-9">
+        <div class="bubble">
+          <div class="pointer">
+            <p>{{ postTexto }} </p>
+          </div>
+          <div class="pointer-border"></div>
+        </div>
+        <p class="post-actions">
+          <a href="#" [routerLink]="" (click)="mostrarComentariosToggle()">Comentar</a> -
+          <a href="#" [routerLink]="">Like</a> -
+          <a href="#" [routerLink]="">Seguir</a> -
+          <a href="#" [routerLink]="">Compartir</a>
+        </p>
+        <div *ngIf="mostrarComentarios">
+          <div class="comment-form">
+            <div class="form-inline row">
+              <div class="form-group col-10">
+                <input ref-inputText (keyup.enter)="agregarComentario(inputText)" type="text" class="form-control" placeholder="escribir comentario"
+                  autocomplete="off">
+              </div>
+              <button type="button" class="btn btn-secondary col-2" (click)="agregarComentario(inputText)">Agregar</button>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+        <div  *ngIf="mostrarComentarios" class="comments">
+          <div class="comment row" *ngFor="let comm of comentarios">
+            <a href="#" class="comment-avatar float-xs-left">
+              <img src="{{ comm.img }}" alt="">
+            </a>
+            <div class="comment-text">
+              <p>{{ comm.texto }}</p>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>

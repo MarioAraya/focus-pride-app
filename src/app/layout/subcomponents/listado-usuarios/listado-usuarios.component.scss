@@ -1,0 +1,26 @@
+.fa-user-plus, .fa-commenting, .fa-plus-square {
+    color: green;
+    cursor: pointer;
+}
+
+.post-avatar {
+    width: 120px;
+}
+
+.post-avatar img {
+    width: 110px;
+}
+
+.thumbnail {
+    display: block;
+    padding: 4px;
+    margin: 0 auto;
+    line-height: 1.42857143;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    -webkit-transition: border .2s ease-in-out;
+    -o-transition: border .2s ease-in-out;
+    transition: border .2s ease-in-out;
+}
+
