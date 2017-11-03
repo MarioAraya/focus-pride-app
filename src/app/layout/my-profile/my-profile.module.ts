@@ -11,12 +11,15 @@ import { MyProfilePostComponent } from './../subcomponents/my-profile-post/my-pr
 import { PostComponent } from './../subcomponents/post/post.component';
 import { ListadoUsuariosComponent } from './../subcomponents/listado-usuarios/listado-usuarios.component';
 
+import { TranslateModule } from '@ngx-translate/core';
+
 @NgModule({
     imports: [
         CommonModule,
         MyProfileRoutingModule,
         BsComponentModule,
-        NgbModule
+        NgbModule,
+        TranslateModule
     ],
     declarations: [
         MyProfileComponent,

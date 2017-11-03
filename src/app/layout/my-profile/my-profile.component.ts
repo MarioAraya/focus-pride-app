@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { routerTransition } from 'app/router.animations';
 import { DatosUsuarioService } from 'app/servicios/datos-usuario.service';
 import { PosteosService } from 'app/servicios/posteos.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-my-profile',
@@ -21,7 +22,8 @@ export class MyProfileComponent implements OnInit {
 
   constructor(
     private datosUsuarioService: DatosUsuarioService,
-    private posteosService: PosteosService) { 
+    private posteosService: PosteosService,
+    private translate: TranslateService) {   
   }
 
   

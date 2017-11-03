@@ -7,17 +7,17 @@
     <div class="col-8">
       <ul>
         <li>
-          <strong>Name: </strong>{{ model.nombre }}</li>
+          <strong>{{ 'Name' | translate }} : </strong>{{ model.nombre }}</li>
         <li>
-          <strong>Email: </strong>{{ model.email }}</li>
+          <strong>{{ 'Email' | translate }} : </strong>{{ model.email }}</li>
         <li>
-          <strong>City: </strong>{{ model.ciudad }}</li>
+          <strong>{{ 'City' | translate }} : </strong>{{ model.ciudad }}</li>
         <li>
-          <strong>State: </strong>{{ model.pais }}</li>
+          <strong>{{ 'State' | translate }} : </strong>{{ model.pais }}</li>
         <li>
-          <strong>Gender: </strong>{{ model.genero }}</li>
+          <strong>{{ 'Gender' | translate }} : </strong>{{ model.genero }}</li>
         <li>
-          <strong>Edad: </strong>{{ model.edad }}</li>
+          <strong>{{ 'Age' | translate }} : </strong>{{ model.edad }}</li>
       </ul>
     </div>
   </div>
@@ -26,21 +26,21 @@
     <div class="col-12">
       <div class="card">
         <div class="card-header">
-          Postear en el muro
+            {{ 'Post to wall' | translate }}
         </div>
         <div class="card-block">
           <div class="form-group">
             <textarea class="form-control" placeholder=""></textarea>
           </div>
-          <button type="submit" class="btn btn-primary">Postear</button>
+          <button type="submit" class="btn btn-primary">{{ 'Post' | translate }}</button>
           <div class="float-right">
             <div class="btn-toolbar">
               <button type="button" class="btn btn-secondary">
-                <i class="fa fa-pencil"></i>Texto</button>
+                <i class="fa fa-pencil"></i>{{ 'Text' | translate }}</button>
               <button type="button" class="btn btn-secondary">
-                <i class="fa fa-file-image-o"></i>Imagen</button>
+                <i class="fa fa-file-image-o"></i>{{ 'Image' | translate }}</button>
               <button type="button" class="btn btn-secondary">
-                <i class="fa fa-file-video-o"></i>Video</button>
+                <i class="fa fa-file-video-o"></i>{{ 'Video' | translate }}</button>
             </div>
           </div>
         </div>
