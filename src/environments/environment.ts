@@ -4,5 +4,14 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+  production: false,
+
+  firebase: {
+    apiKey: "AIzaSyBHksd7yQN0__ehcqKJrkZvj9ucoC90UNo",
+    authDomain: "focus-pride.firebaseapp.com",
+    databaseURL: "https://focus-pride.firebaseio.com",
+    projectId: "focus-pride",
+    storageBucket: "",
+    messagingSenderId: "874787787959"
+  }
 };
