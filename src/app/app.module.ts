@@ -14,7 +14,7 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { environment } from '../environments/environment';
-
+import { CoreModule } from './core/core.module';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: Http) {
@@ -41,7 +41,8 @@ export function HttpLoaderFactory(http: Http) {
         }),
         AngularFireModule.initializeApp(environment.firebase, 'focus-pride'), // imports firebase/app needed for everything
         AngularFirestoreModule, // imports firebase/firestore, only needed for database features
-        AngularFireAuthModule, // imports firebase/auth, only needed for auth features            
+        AngularFireAuthModule, // imports firebase/auth, only needed for auth features          
+        CoreModule  
     ],
     providers: [AuthGuard],
     bootstrap: [AppComponent]
