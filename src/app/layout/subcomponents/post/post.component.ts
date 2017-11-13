@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class PostComponent implements OnInit {
   mostrarComentarios: boolean = false
   @Input() usuarioPost: string
+  @Input() usuarioPostId: string
   @Input() usuarioAvatar: string
   @Input() postTexto: string
   @Input() comentarios: any[]
@@ -20,7 +21,6 @@ export class PostComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('post usuario: ' +this.usuarioPost)
   }
 
   agregarComentario(input: HTMLInputElement) {
