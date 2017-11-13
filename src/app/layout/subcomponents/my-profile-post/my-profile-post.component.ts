@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'app/core/auth.service';
 
 @Component({
   selector: 'app-my-profile-post',
@@ -8,24 +9,12 @@ import { Component, OnInit } from '@angular/core';
 export class MyProfilePostComponent implements OnInit {
 
   model: IModelPerfil
+  user: any
 
-  constructor() {
-    this.fillModelMockData()
+  constructor(public auth: AuthService) {
   }
 
-  fillModelMockData() {
-    this.model = {
-      urlFotoPerfil: "http://fresh5447.github.io/bootstrap-social-network-template/img/user.png",
-      nombre: "Mario Araya Romero",
-      email: "mario.araya@timestamp.cl",
-      ciudad: "Santiago",
-      pais: "Chile",
-      genero: "Masculino",
-      edad: 33,
-    }
-  }
-
-  ngOnInit() {
+  ngOnInit() { 
   }
 
 }
