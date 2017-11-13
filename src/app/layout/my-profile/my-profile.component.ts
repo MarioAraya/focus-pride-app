@@ -1,4 +1,6 @@
-import { IModelPerfil } from './../subcomponents/my-profile-post/my-profile-post.component';
+import { Observable } from 'rxjs/Observable';
+import { AuthService } from 'app/core/auth.service';
+import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 import { Component, OnInit } from '@angular/core';
 import { routerTransition } from 'app/router.animations';
 import { DatosUsuarioService } from 'app/servicios/datos-usuario.service';
@@ -15,34 +17,69 @@ import { TranslateService } from '@ngx-translate/core';
 export class MyProfileComponent implements OnInit {
   usuarios: any[]
   gimnasios: any[]
-  model: IModelPerfil
 
   // para componente hijo "posteos" (tab "Noticias")
-  posts: any[]
+  postsCol: AngularFirestoreCollection<Post>
+  posts: Observable<Post[]>
+
+  usersCol: AngularFirestoreCollection<User>
+  users: Observable<User[]>
 
   constructor(
     private datosUsuarioService: DatosUsuarioService,
     private posteosService: PosteosService,
-    private translate: TranslateService) {   
+    private translate: TranslateService,
+    private afs: AngularFirestore,
+    public auth: AuthService) {   
   }
 
   
   ngOnInit() {
+    this.usersCol = this.afs.collection('users')
+    this.users = this.usersCol.valueChanges()
+
+    //this.postsCol = this.afs.collection('posts')
+    //let query = this.postsCol.where('uid', '==', 'VjEMKCPf8HdHe0zE1C4dCZUXVnJ3')
+    this.auth.getUser().subscribe(user => {
+      if (user) {
+        console.log('user.following: '+user.following)
+        this.postsCol = this.afs.collection('posts', posts => posts.where('uid', '==', user.following))
+        this.posts = this.postsCol.valueChanges()
+      }
+      else {
+        this.postsCol = this.afs.collection('posts')
+        this.posts = this.postsCol.valueChanges()
+      }
+    })
+
     this.fillDataDummy()    
-    this.getPosts()
+    //this.getPosts()
   }
 
   private getPosts() {
-    this.posts = this.posteosService.getPostsDummy()
+    //this.posts = this.posteosService.getPostsDummy()
   }
 
   // Llena data dummy
   private fillDataDummy() {
-    this.model = this.datosUsuarioService.getDataPerfilDummy()
+    //this.model = this.datosUsuarioService.getDataPerfilDummy()
 
     this.usuarios = this.datosUsuarioService.getUsuariosDummy()
 
     this.gimnasios = this.datosUsuarioService.getGimnasiosDummy()
   }
+}
 
+interface User {
+  uid: string;
+  email: string;
+  photoURL?: string;
+  displayName?: string;
+}
+
+interface Post {
+  content: string
+  fecha: string
+  photoURL: string
+  uid: string
 }

@@ -21,11 +21,12 @@
         <div class="alert alert-info">
           <strong>Feed de 'mis contactos'</strong> publicaciones de mis amigos alumnos y entrenadores, publicidad, novedades, descuentos, noticias mundo fitness.
         </div>
-        <app-post *ngFor="let post of posts" 
-        [usuarioAvatar]="post.usuarioAvatar"
-        [usuarioPost]="post.usuarioPost"
-        [postTexto]="post.postTexto"
-        [comentarios]="post.comentarios"></app-post>
+          <app-post *ngFor="let post of posts | async" 
+          [usuarioAvatar]="post.photoURL"
+          [usuarioPost]="post.displayName"
+          [usuarioPostId]="post.uid"
+          [postTexto]="post.content"
+          [comentarios]="post.comentarios"></app-post>
       </ng-template>
     </ngb-tab>
     <ngb-tab>
@@ -37,9 +38,23 @@
         <div class="alert alert-info">
           <strong>lista de entrenadores. </strong> Permite buscar entrenadores de la zona, ver sus perfiles.
         </div>
-        <app-listado-usuarios [listado]="usuarios" [botones]="'111'"></app-listado-usuarios>
+        <!-- el pipe | async hace la magia!! -->
+        <app-listado-usuarios [listado]="users | async" [tipo]="profes" [botones]="'110'"></app-listado-usuarios>
       </ng-template>
     </ngb-tab>
+    <ngb-tab>
+        <ng-template ngbTabTitle>
+          <b>{{ 'Alumnos' | translate }}</b>
+        </ng-template>
+        <ng-template ngbTabContent>
+          <br>
+          <div class="alert alert-info">
+            <strong>lista de alumnos. </strong> Permite buscar alumnos.
+          </div>
+          <!-- el pipe | async hace la magia!! -->
+          <app-listado-usuarios [listado]="users | async" [tipo]="alumnos" [botones]="'110'"></app-listado-usuarios>
+        </ng-template>
+      </ngb-tab>
     <ngb-tab>
       <ng-template ngbTabTitle>
         <b>{{ 'Gym' | translate }}</b>
@@ -49,7 +64,7 @@
         <div class="alert alert-info">
           <strong>lista de gimnasios. </strong> Permite buscar gimnasios de la zona, ver sus precios, calendario de actividades. + info útil para los alumnos.
         </div>
-        <app-listado-usuarios [listado]="gimnasios" [botones]="'110'"></app-listado-usuarios>
+        <app-listado-usuarios [listado]="gimnasios" [tipo]="gym" [botones]="'110'"></app-listado-usuarios>
       </ng-template>
     </ngb-tab>
     <ngb-tab>
@@ -57,8 +72,11 @@
         <b>{{ 'Shop' | translate }}</b>
       </ng-template>
       <ng-template ngbTabContent>
-        <p>feed de tiendas y su publicidad/ofertas de ropa y suplementos</p>
-        <p>- poder buscar una tienda, ver sus productos, comprar online</p>
+          <br>
+          <div class="alert alert-info">
+            <strong>lista de tiendas. </strong> Buscar tiendas de ropa o suplementos y ver sus productos.
+          </div>
+          <app-listado-usuarios [listado]="gimnasios" [tipo]="tiendas" [botones]="'110'"></app-listado-usuarios>
       </ng-template>
     </ngb-tab>
   </ngb-tabset>

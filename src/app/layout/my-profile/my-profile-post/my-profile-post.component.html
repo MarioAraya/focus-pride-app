@@ -1,0 +1,74 @@
+<div class="profile" *ngIf="user">
+  <div class="row">
+    
+  </div>
+</div>
+
+
+<div *ngIf="auth.user | async; then authenticated else guest">
+    <!-- template will replace this div -->
+</div>
+<!-- User NOT logged in -->
+<ng-template #guest>
+    <h3>Hola, Invitado</h3>
+    <p>Inicia sesión para comenzar...</p>
+
+    <button (click)="auth.emailPassLogin('mario@focuspride.com', '123456')">
+        <i class="fa fa-email"></i> Login con mario@focuspride.com/123456
+    </button>
+
+</ng-template>
+<!-- User logged in -->
+<ng-template #authenticated>
+    <div *ngIf="auth.user | async as user">
+      <h1 class="page-header">{{ user.displayName }}</h1>
+      <div class="row">
+        <div class="col-4">
+          <img class="img-thumbnail" alt="Foto de perfil" src="{{ user.photoURL }}">
+        </div>
+        <div class="col-8">
+          <ul>
+            <li>
+              <strong>{{ 'Name' | translate }} : </strong>{{ user.displayName }}</li>
+            <li>
+              <strong>{{ 'Email' | translate }} : </strong>{{ user.email }}</li>
+            <!-- <li>
+              <strong>{{ 'City' | translate }} : </strong>{{ model.ciudad }}</li>
+            <li>
+              <strong>{{ 'State' | translate }} : </strong>{{ model.pais }}</li>
+            <li>
+              <strong>{{ 'Gender' | translate }} : </strong>{{ model.genero }}</li>
+            <li>
+              <strong>{{ 'Age' | translate }} : </strong>{{ model.edad }}</li> -->
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+              {{ 'Post to wall' | translate }}
+            </div>
+            <div class="card-block">
+              <div class="form-group">
+                <textarea [(ngModel)]="content" name="content" class="form-control" placeholder=""></textarea>
+              </div>
+              <button type="button" (click)="postear()" class="btn btn-primary">{{ 'Post' | translate }}</button>
+              <div class="float-right">
+                <div class="btn-toolbar">
+                  <button type="button" class="btn btn-secondary">
+                    <i class="fa fa-pencil"></i>{{ 'Text' | translate }}</button>
+                  <button type="button" class="btn btn-secondary">
+                    <i class="fa fa-file-image-o"></i>{{ 'Image' | translate }}</button>
+                  <button type="button" class="btn btn-secondary">
+                    <i class="fa fa-file-video-o"></i>{{ 'Video' | translate }}</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <button (click)="auth.signOut()">Logout</button> -->
+    </div>
+</ng-template>
