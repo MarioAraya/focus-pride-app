@@ -15,3 +15,15 @@ $ npm start
 # el resultado puede ser hosteado en cualquier servidor http
 $ npm run build
 ```
+
+
+Para el login, se usó firebase
+- https://angularfirebase.com/lessons/google-user-auth-with-firestore-custom-data/
+- https://github.com/angular/angularfire2/blob/master/docs/firestore/documents.md
+
+RxJS
+- https://angularfirebase.com/lessons/rxjs-quickstart-with-20-examples/
+
+Facebook app dashboard
+- https://developers.facebook.com/apps/145627316187075/dashboard/
+
