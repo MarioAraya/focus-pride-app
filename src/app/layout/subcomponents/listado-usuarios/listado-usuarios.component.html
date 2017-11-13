@@ -12,13 +12,13 @@
   <div class="col" *ngFor="let item of listado">
     <div class="post-avatar thumbnail text-center">
       <a href="#">
-        <img src="{{ item.imagen }}" alt="">
-        <div>{{ item.texto }}</div>
+        <img src="{{ item.photoURL }}" alt="">
+        <div>{{ item.displayName }}</div>
       </a>
       <div>
-        <i class="fa fa-user-plus" aria-hidden="true" alt="Agregar de amigo" *ngIf="mostrarBtn(0)"></i>
-        <i class="fa fa-commenting" aria-hidden="true" alt="Enviar mensaje privado" *ngIf="mostrarBtn(1)"></i>
-        <i class="fa fa-plus-square" aria-hidden="true" alt="Seguir usuario" *ngIf="mostrarBtn(2)"></i>
+        <i class="fa fa-user-plus" (click)="SeguirUsuario(item.uid)" aria-hidden="true" alt="Agregar de amigo" *ngIf="mostrarBtn(0)"></i>
+        <i class="fa fa-commenting" (click)="SeguirUsuario(item.uid)" aria-hidden="true" alt="Enviar mensaje privado" *ngIf="mostrarBtn(1)"></i>
+        <i class="fa fa-plus-square" (click)="SeguirUsuario(item.uid)" aria-hidden="true" alt="Seguir usuario" *ngIf="mostrarBtn(2)"></i>
       </div>
     </div>
   </div>

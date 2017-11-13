@@ -1,3 +1,4 @@
+import { AuthService } from 'app/core/auth.service';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -8,13 +9,18 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ListadoUsuariosComponent implements OnInit {
   @Input() listado: any[]
   @Input() botones: string
+  @Input() tipo: string
   private listadoCompleto: any[]
 
-  constructor() {
+  constructor(private auth: AuthService) {
   }
 
   ngOnInit() {
     this.listadoCompleto = this.listado
+  }
+  
+  SeguirUsuario(uid: string) {
+    this.auth.followUser(uid);
   }
 
   onBuscarTextChanged(input: HTMLInputElement) {
@@ -23,7 +29,7 @@ export class ListadoUsuariosComponent implements OnInit {
     }
     else if(input && input.value) {
       this.listado = this.listado.filter((value) => {
-        if (value.texto.indexOf(input.value) > -1) 
+        if (value.displayName.indexOf(input.value) > -1) 
           return value;
       })
     }
