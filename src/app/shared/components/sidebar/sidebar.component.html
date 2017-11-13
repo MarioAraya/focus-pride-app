@@ -15,10 +15,10 @@
         <a [routerLink]="['/mensajes']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-comment"></i>&nbsp;{{ 'Messages' | translate }}
         </a>
-        <!-- <a [routerLink]="['/chat']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-            <i class="fa fa-comments"></i>&nbsp;{{ 'Chat' | translate }}
+        <a (click)="logout()" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-sign-out"></i>&nbsp;{{ 'Logout' | translate }}
         </a>
-        <a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
+        <!-- <a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-home"></i>&nbsp;{{ 'Dashboard' | translate }}
         </a> -->
         <!-- <a [routerLink]="['/charts']" [routerLinkActive]="['router-link-active']" class="list-group-item">
