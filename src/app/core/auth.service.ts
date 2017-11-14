@@ -84,12 +84,13 @@ export class AuthService {
   private updateUserData(user) {
     // Sets user data to firestore on login
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
+    debugger
     const data: User = {
       uid: user.uid,
       email: user.email,
       displayName: user.displayName,
       photoURL: user.photoURL,
-      following: user.following
+      following: user.following || ''
     }
     localStorage.setItem('isLoggedin', 'true');
     this.router.navigate(['/profile']);
