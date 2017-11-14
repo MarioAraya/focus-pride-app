@@ -11,16 +11,39 @@ export class ListadoUsuariosComponent implements OnInit {
   @Input() botones: string
   @Input() tipo: string
   private listadoCompleto: any[]
+  private currUser: any
+  private usersFollowed: string[]
 
   constructor(private auth: AuthService) {
   }
 
   ngOnInit() {
     this.listadoCompleto = this.listado
+    this.auth.user.subscribe(user => { 
+      this.currUser = user; 
+      this.usersFollowed = user.following.split(';')
+    })
   }
   
   SeguirUsuario(uid: string) {
-    this.auth.followUser(uid);
+    console.log(this.usersFollowed)
+    if (this.currUser.following.indexOf(uid) >= 0) { // remueve user
+      this.currUser.following.replace(uid, '')
+      this.usersFollowed.splice( this.usersFollowed.indexOf(uid) )
+      console.log(this.usersFollowed)
+    }
+    else {
+      this.usersFollowed.push(uid) // agrega usuario
+    } 
+    let usersFollowed = this.usersFollowed.join(';')
+    this.auth.followUser(usersFollowed); // actualiza prop usuario
+  }
+
+  esUsuarioSeguido(uid: string) {
+    if (uid && this.currUser)
+      return (this.currUser.following.indexOf(uid) > -1) ? 'fa fa-user-times' : 'fa fa-user-plus'  
+    else if (this.currUser && this.currUser.following == '')
+      return 'fa fa-user-plus'
   }
 
   onBuscarTextChanged(input: HTMLInputElement) {
