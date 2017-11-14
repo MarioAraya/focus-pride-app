@@ -15,14 +15,16 @@ export class ListadoUsuariosComponent implements OnInit {
   private usersFollowed: string[]
 
   constructor(private auth: AuthService) {
+    this.auth.user.subscribe(user => { 
+      if (user) {
+        this.currUser = user; 
+        this.usersFollowed = user.following.split(';')
+      }
+    })
   }
 
   ngOnInit() {
     this.listadoCompleto = this.listado
-    this.auth.user.subscribe(user => { 
-      this.currUser = user; 
-      this.usersFollowed = user.following.split(';')
-    })
   }
   
   SeguirUsuario(uid: string) {

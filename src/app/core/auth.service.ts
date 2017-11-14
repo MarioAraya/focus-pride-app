@@ -88,7 +88,8 @@ export class AuthService {
       uid: user.uid,
       email: user.email,
       displayName: user.displayName,
-      photoURL: user.photoURL
+      photoURL: user.photoURL,
+      following: user.following
     }
     localStorage.setItem('isLoggedin', 'true');
     this.router.navigate(['/profile']);

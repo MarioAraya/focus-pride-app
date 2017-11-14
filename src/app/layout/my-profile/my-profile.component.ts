@@ -42,13 +42,13 @@ export class MyProfileComponent implements OnInit {
     //let query = this.postsCol.where('uid', '==', 'VjEMKCPf8HdHe0zE1C4dCZUXVnJ3')
     this.auth.getUser().subscribe(user => {
       if (user) {
-        console.log('user.following: '+user.following)
+        //console.log('user.following: '+user.following)
 
 
         // TODO: improve this, allow multiple followedUser's post
-        user.following.split(';').map( uFollowed =>{
-          this.postsCol = this.afs.collection('posts', posts => posts.where('uid', '==', user.following))
-        })
+        // user.following.split(';').map( uFollowed =>{
+        //   this.postsCol = this.afs.collection('posts', posts => posts.where('uid', '==', user.following))
+        // })
         
         this.postsCol = this.afs.collection('posts', posts => posts.where('uid', '==', user.following))
         this.posts = this.postsCol.valueChanges()
