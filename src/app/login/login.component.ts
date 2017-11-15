@@ -11,7 +11,8 @@ import { AuthService } from 'app/core/auth.service';
     animations: [routerTransition()]
 })
 export class LoginComponent implements OnInit {
-    
+    users: any // prop para Firebase auth (?)
+
     constructor(
         public router: Router,
         public auth: AuthService) {    
