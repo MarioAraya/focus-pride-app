@@ -23,6 +23,7 @@ $ npm run build
 $ firebase deploy
 # - Abrir sitio publicado
 $ firebase open hosting:site
+# - Abrir https://focus-pride.firebaseapp.com/login
 ```
 
 
