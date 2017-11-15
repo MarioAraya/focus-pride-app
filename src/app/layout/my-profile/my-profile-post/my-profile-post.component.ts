@@ -13,7 +13,7 @@ export class MyProfilePostComponent implements OnInit {
 
   postsCol: AngularFirestoreCollection<Post>
   posts: Observable<Post[]>
-
+  user: any // prop para Firebase auth (?)
   content: string
 
   constructor(
