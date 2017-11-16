@@ -9,3 +9,23 @@
 .card-block-nopadding {
     padding: 0;
 }
+
+.table-bordered tbody td {
+    margin: 0;
+    min-width: 46px;
+    line-height: 6px;
+    background: #555;
+}
+
+.card-block {
+    padding: 5px 5px;
+}
+
+.card {
+    margin: 10px;
+}
+
+.ficha {
+    background: #eee;
+    padding: 5px 20px;
+}
