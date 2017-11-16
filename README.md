@@ -2,7 +2,7 @@
 
 Aplicación asdf adsf, descripción de la app, cómo instalarla, cómo usarla, ventajas, red social y amigos, descuentos, etc, etc.
 
-Para probar la app:
+### - Para probar la app:
 ```bash
 # - Clonar repo
 $ git clone https://MarioAraya@bitbucket.org/timestampcl/focus-pride-app.git
@@ -14,6 +14,16 @@ $ npm start
 # - Genera 'build' optimizado para producción dentro de folder `dist`
 # el resultado puede ser hosteado en cualquier servidor http
 $ npm run build
+```
+### - Comandos Firebase
+```bash 
+# - construir sitio --prod
+$ npm run build
+# - Subir a firebase hosting
+$ firebase deploy
+# - Abrir sitio publicado
+$ firebase open hosting:site
+# - Abrir https://focus-pride.firebaseapp.com/login
 ```
 
 

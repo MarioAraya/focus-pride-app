@@ -1,19 +1,455 @@
-<div [@routerTransition]>
-  <p>
-    evaluaciones!
-  </p>
-  <ul>
-    <li>Alumno: se desglosa en:</li>
-    <li>
-      <strong>«evaluación física»</strong> : se ve el historial de las evaluaciones que se le ha realizado, con todos los resultados
-      bien detallados </li>
-    <li>
-      <strong>«nutrición»</strong> : accede al plan nutricional que se le ha creado, los suplementos recomendados, los tips, todo lo
-      relacionado con la alimentación respectiva a su plan Le llega una notificación cuando el profesor le manda la información
-    </li>
-    <li>_____________________________________________</li>
-    <li>
-      <strong>Entrenador</strong>: se desglosa en: - listado de sus alumnos por orden alfabético y tiene la facilidad de pinchar en
-      el link del alumno al cual quiere enviarle la información</li>
-  </ul>
-</div>    
+<div [@routerTransition] class="container ficha">
+  <h1>
+    <p class="text-center">Ficha de Evaluación</p>
+  </h1>
+  <div class="row">
+    <div class="col text-center">
+      <div class="form-group row">
+        <label class="col-2 col-form-label">Fecha</label>
+        <div class="col-10">
+          <input class="form-control" type="date" value="2011-08-19" id="fecha">
+        </div>
+      </div>
+    </div>
+    <div class="col text-center">
+      <div class="form-group row">
+        <label class="col-2 col-form-label">Edad</label>
+        <div class="col-10">
+          <input class="form-control" type="number" id="edad">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <p>
+      <strong>Datos que debe entregar el alumno con las fotos</strong> (El entrenador proporciona los datos para el alumno presencial)
+    </p>
+  </div>
+
+  <div class="card card-padding">
+    <div class="card-block">
+      <div class="row">
+        <div class="col-md-5">
+          <label class="sr-only" for="inlineFormInputGroup"></label>
+          <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+            <div class="input-group-addon">Altura</div>
+            <input type="number" class="form-control" id="inlineFormInputGroup">
+          </div>
+          <label class="sr-only" for="inlineFormInputGroup"></label>
+          <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+            <div class="input-group-addon">Peso</div>
+            <input type="number" class="form-control" id="inlineFormInputGroup">
+          </div>
+          <br>
+          <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+            <div class="input-group-addon">% grasa</div>
+            <input type="number" class="form-control" id="inlineFormInputGroup">
+          </div>
+          <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+            <div class="input-group-addon">% músculo</div>
+            <input type="number" class="form-control" id="inlineFormInputGroup">
+          </div>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-5">
+          <div class="card">
+            <div class="card-block card-block-nopadding">
+              <p class="text-center">
+                <b>Mediciones de diámetros (cm)</b>
+              </p>
+            </div>
+          </div>
+          <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+            <div class="input-group-addon">Cintura</div>
+            <input type="number" class="form-control" id="inlineFormInputGroup">
+          </div>
+          <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+            <div class="input-group-addon">Cadera</div>
+            <input type="number" class="form-control" id="inlineFormInputGroup">
+          </div>
+          <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+            <div class="input-group-addon">Brazos</div>
+            <input type="number" class="form-control" id="inlineFormInputGroup">
+          </div>
+          <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+            <div class="input-group-addon">Muslo</div>
+            <input type="number" class="form-control" id="inlineFormInputGroup">
+          </div>
+          <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+            <div class="input-group-addon">Glúteos (mujeres)</div>
+            <input type="number" class="form-control" id="inlineFormInputGroup">
+          </div>
+        </div>
+      </div>
+    </div>
+    <p> *Proporcionado por el alumno “online” que tenga acceso a báscula de bioimpedancia. Dejar en blanco de no ser posible.</p>
+  </div>
+  <!-- fin card-block -->
+
+  <br>
+  <br>
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <img src="http://via.placeholder.com/100x150" class="card-img-bottom">
+      </div>
+      <div class="card-img-overlay">
+        <h4 class="card-title text-center">Foto frontal</h4>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="http://via.placeholder.com/100x150" class="card-img-bottom">
+        <div class="card-img-overlay">
+          <h4 class="card-title text-center">Foto lateral</h4>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="http://via.placeholder.com/100x150" class="card-img-bottom">
+        <div class="card-img-overlay">
+          <h4 class="card-title text-center">Foto posterior</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <div class="row">
+    <p>
+      <strong>Información proporcionada por el entrenador</strong>
+    </p>
+  </div>
+
+  <div class="card card-padding">
+    <div class="card-block">
+      <div class="row">
+        <div class="col-md-4">
+          <label class="sr-only" for="inlineFormInputGroup"></label>
+          <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+            <div class="input-group-addon">IMC</div>
+            <input type="number" class="form-control" id="inlineFormInputGroup">
+          </div>
+          <br>
+          <br>
+          <div class="card">
+            <div class="card-block card-block-nopadding">
+              <p class="text-center">
+                <b>Medicion de pliegues</b>
+                <br>
+                <b>(mm) lipocalibre</b>
+              </p>
+            </div>
+          </div>
+          <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+            <div class="input-group-addon">Bicipital</div>
+            <input type="number" class="form-control" id="inlineFormInputGroup">
+          </div>
+          <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+            <div class="input-group-addon">Tricipital</div>
+            <input type="number" class="form-control" id="inlineFormInputGroup">
+          </div>
+          <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+            <div class="input-group-addon">Subescapular</div>
+            <input type="number" class="form-control" id="inlineFormInputGroup">
+          </div>
+          <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+            <div class="input-group-addon">Suprailiaco</div>
+            <input type="number" class="form-control" id="inlineFormInputGroup">
+          </div>
+          <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+            <div class="input-group-addon">Muslo</div>
+            <input type="number" class="form-control" id="inlineFormInputGroup">
+          </div>
+          <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+            <div class="input-group-addon">Abdominal</div>
+            <input type="number" class="form-control" id="inlineFormInputGroup">
+          </div>
+          <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+            <div class="input-group-addon">Pectoral</div>
+            <input type="number" class="form-control" id="inlineFormInputGroup">
+          </div>
+          <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+            <div class="input-group-addon">Axilar</div>
+            <input type="number" class="form-control" id="inlineFormInputGroup">
+          </div>
+          <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+            <div class="input-group-addon">Pierna</div>
+            <input type="number" class="form-control" id="inlineFormInputGroup">
+          </div>
+          <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+            <div class="input-group-addon">
+              <strong>% de grasa</strong>
+            </div>
+            <input type="number" class="form-control" id="inlineFormInputGroup">
+          </div>
+          <br>
+          <p>* Alumno presencial</p>
+        </div>
+        <div class="col-md-8">
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <p>
+            <strong>Observaciones</strong> (Análisis de los valores y fotografías, recomendaciones)
+          </p>
+          <textarea class="form-control" id="exampleTextarea" rows="9"></textarea>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <button class="btn btn-success pull-right">Guardar ficha</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div>
+  <div [@routerTransition] class="container ficha">
+    <h1>
+      <p class="text-center">Plan Nutricional</p>
+    </h1>
+    <div class="row">
+      <div class="col text-center">
+        <div class="form-group row">
+          <label class="col-2 col-form-label">Fecha</label>
+          <div class="col-10">
+            <input class="form-control" type="date" value="2011-08-19" id="fecha">
+          </div>
+        </div>
+      </div>
+      <div class="col text-center">
+        <div class="form-group row">
+          <label class="col-2 col-form-label">Calorías</label>
+          <div class="col-10">
+            <input class="form-control" type="number" id="edad">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <p>
+        <strong>Información proporcionada por el entrenador</strong>
+      </p>
+      <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+        <div class="input-group-addon">Alergia alimenticia: </div>
+        <input type="number" class="form-control" id="inlineFormInputGroup">
+      </div>
+      <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+        <div class="input-group-addon">Alimentos que no consuma: </div>
+        <input type="number" class="form-control" id="inlineFormInputGroup">
+      </div>
+    </div>
+
+    <br>
+    <div class="row">
+      <div class="card">
+        <div class="card-header">
+          DESAYUNO - 8:00 Hrs
+        </div>
+        <div class="card-block">
+          <table class="table table-bordered table-inverse">
+            <thead>
+              <tr>
+                <th>Alimentos</th>
+                <th>Cantidad</th>
+                <th>Calorías totales</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <br>
+      <div class="card">
+        <div class="card-header">
+          MEDIA MAÑANA (SNACK) - 10:00 Hrs
+        </div>
+        <div class="card-block">
+          <table class="table table-bordered table-inverse">
+            <thead>
+              <tr>
+                <th>Alimentos</th>
+                <th>Cantidad</th>
+                <th>Calorías totales</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <br>
+      <div class="card">
+        <div class="card-header">
+          ALMUERZO - 13:00 Hrs
+        </div>
+        <div class="card-block">
+          <table class="table table-bordered table-inverse">
+            <thead>
+              <tr>
+                <th>Alimentos</th>
+                <th>Cantidad</th>
+                <th>Calorías totales</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <br>
+      <div class="card">
+        <div class="card-header">
+          MEDIA TARDE (SNACK) - 16:00 Hrs
+        </div>
+        <div class="card-block">
+          <table class="table table-bordered table-inverse">
+            <thead>
+              <tr>
+                <th>Alimentos</th>
+                <th>Cantidad</th>
+                <th>Calorías totales</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <br>
+      <div class="card">
+        <div class="card-header">
+          CENA - 20:00 Hrs
+        </div>
+        <div class="card-block">
+          <table class="table table-bordered table-inverse">
+            <thead>
+              <tr>
+                <th>Alimentos</th>
+                <th>Cantidad</th>
+                <th>Calorías totales</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <p>
+        <strong>ALIMENTOS PROHIBIDOS:</strong> 
+      </p>
+      <textarea class="form-control" id="exampleTextarea" rows="9"></textarea>
+    </div>
+    <br>
+    <div class="row">        
+      <p>
+        <strong>OBSERVACIONES/RECOMENDACIONES/SUPLEMENTACIÓN SUGERIDA:</strong>
+      </p>
+      <textarea class="form-control" id="exampleTextarea" rows="9"></textarea>
+    </div>
+    <br>
+    <button class="btn btn-success pull-right">Guardar Plan Nutricional</button>
+    <br>
+  </div>
+</div>

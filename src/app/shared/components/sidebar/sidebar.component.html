@@ -1,7 +1,10 @@
 <nav class="sidebar" [ngClass]="{sidebarPushRight: isActive}">
     <ul class="list-group">
         <!-- <img src="/assets/images/competition-avatar.svg" height="60" width="60" alt=""> -->
-        <img src="assets/images/user.svg" width="200px" class="user-avatar align-center" />
+        <!-- <img src="assets/images/user.svg" width="200px" class="user-avatar align-center" /> -->
+        <div *ngIf="auth.user | async as user" class="align-center profile-photo">
+            <img src="{{ user.photoURL }}" width="200px" class="user-avatar align-center" />
+        </div>                
         
         <a [routerLink]="['/profile']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-user"></i>&nbsp;{{ 'My Profile' | translate }}
@@ -15,7 +18,7 @@
         <a [routerLink]="['/mensajes']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-comment"></i>&nbsp;{{ 'Messages' | translate }}
         </a>
-        <a (click)="logout()" [routerLinkActive]="['router-link-active']" class="list-group-item">
+        <a href="#" (click)="logout()" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-sign-out"></i>&nbsp;{{ 'Logout' | translate }}
         </a>
         <!-- <a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">

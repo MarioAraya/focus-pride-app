@@ -16,12 +16,14 @@ interface User {
   email: string;
   photoURL?: string;
   displayName?: string;
+  following?: string
 }
 
 @Injectable()
 export class AuthService {
 
   user: Observable<User>
+  users: Observable<Array<User>>
 
   constructor(private afAuth: AngularFireAuth,
     private afs: AngularFirestore,
@@ -40,6 +42,17 @@ export class AuthService {
 
   getUser(): Observable<User> {
     return this.user;
+  }
+
+  followUser(uidToFollow: string) {
+    this.user = this.afAuth.authState
+    .switchMap(user => {
+      if (user) {
+        return this.afs.doc<User>(`users/${user.uid}`).update({ following: uidToFollow })
+      } else {
+        return Observable.of(null)
+      }
+    })
   }
 
   googleLogin() {
@@ -71,11 +84,13 @@ export class AuthService {
   private updateUserData(user) {
     // Sets user data to firestore on login
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
+    debugger
     const data: User = {
       uid: user.uid,
       email: user.email,
       displayName: user.displayName,
-      photoURL: user.photoURL
+      photoURL: user.photoURL,
+      following: user.following || ''
     }
     localStorage.setItem('isLoggedin', 'true');
     this.router.navigate(['/profile']);
