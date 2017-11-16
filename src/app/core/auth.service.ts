@@ -44,8 +44,8 @@ export class AuthService {
     return this.user;
   }
 
-  followUser(uidToFollow: string) {
-    this.user = this.afAuth.authState
+  followUser(uidToFollow: string): Observable<User> {
+    return this.user = this.afAuth.authState
     .switchMap(user => {
       if (user) {
         return this.afs.doc<User>(`users/${user.uid}`).update({ following: uidToFollow })
