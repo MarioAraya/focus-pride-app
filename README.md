@@ -2,6 +2,8 @@
 
 Aplicación asdf adsf, descripción de la app, cómo instalarla, cómo usarla, ventajas, red social y amigos, descuentos, etc, etc.
 
+[Demo](https://focus-pride.firebaseapp.com/login)
+
 ### - Para probar la app:
 ```bash
 # - Clonar repo
